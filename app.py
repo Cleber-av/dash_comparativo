@@ -53,24 +53,20 @@ total_atual = df_filtrado.shape[0]
 total_anterior = df_ano_ant.shape[0]
 variacao = ((total_2025 - total_anterior) / total_anterior * 100) if total_anterior > 0 else 0
 
-# Total por tipo final apenas para 2025 e comparação com 2024
-df_2025 = df[(df['DATA'].dt.year == 2025)]
+# Total por tipo final apenas para ano 2024
 df_2024 = df[(df['DATA'].dt.year == 2024)]
-
-total_2025 = df_2025[df_2025['TIPO FINAL'] == tipo_escolhido].shape[0]
 total_2024 = df_2024[df_2024['TIPO FINAL'] == tipo_escolhido].shape[0]
-variacao_2025_2024 = ((total_2025 - total_2024) / total_2024 * 100) if total_2024 > 0 else 0
 
 # Layout
 st.title("Dashboard Interativo - Tipo Final")
 st.metric("Total Atual", total_2025)
-st.metric("Total Ano Anterior", total_anterior)
+st.metric("Total Ano Anterior mesmo período", total_anterior)
 st.metric("Variação (%)", f"{variacao:.2f}%")
 
-st.subheader("Total do Tipo Final no Ano de 2025")
+st.subheader("Total do Tipo Final do Ano")
 st.metric("Total 2025", total_2025)
 st.metric("Total 2024", total_2024)
-st.metric("Variação 2025 vs 2024 (%)", f"{variacao_2025_2024:.2f}%")
+
 
 # Gráfico de linha comparativo
 comparativo_df = pd.concat([
