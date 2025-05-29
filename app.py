@@ -47,9 +47,10 @@ filtro_ano_ant = (
 df_ano_ant = df[filtro_ano_ant]
 
 # Total de ocorrências
+total_2025 = df_2025[df_2025['TIPO FINAL'] == tipo_escolhido].shape[0]
 total_atual = df_filtrado.shape[0]
 total_anterior = df_ano_ant.shape[0]
-variacao = ((total_atual - total_anterior) / total_anterior * 100) if total_anterior > 0 else 0
+variacao = ((total_2025 - total_anterior) / total_anterior * 100) if total_anterior > 0 else 0
 
 # Total por tipo final apenas para 2025 e comparação com 2024
 df_2025 = df[(df['DATA'].dt.year == 2025)]
@@ -61,7 +62,7 @@ variacao_2025_2024 = ((total_2025 - total_2024) / total_2024 * 100) if total_202
 
 # Layout
 st.title("Dashboard Interativo - Tipo Final")
-st.metric("Total Atual", total_atual)
+st.metric("Total Atual", total_2025)
 st.metric("Total Ano Anterior", total_anterior)
 st.metric("Variação (%)", f"{variacao:.2f}%")
 
