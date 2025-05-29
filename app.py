@@ -60,7 +60,7 @@ total_2024 = df_2024[df_2024['TIPO FINAL'] == tipo_escolhido].shape[0]
 
 # Layout
 st.title("Dashboard Interativo - Tipo Final")
-st.metric("Total Atual", filtrado_2025)
+st.metric("Total do Período Selecionado", filtrado_2025)
 st.metric("Total Ano Anterior mesmo período", total_anterior)
 st.metric("Variação (%)", f"{variacao:.2f}%")
 
