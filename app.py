@@ -59,12 +59,12 @@ df_2024 = df[(df['DATA'].dt.year == 2024)]
 total_2024 = df_2024[df_2024['TIPO FINAL'] == tipo_escolhido].shape[0]
 
 # Layout
-st.title("Dashboard Interativo - Tipo Final")
+st.title("Dashboard Interativo - Ocorrências GCM")
 st.metric("Total do Período Selecionado", filtrado_2025)
 st.metric("Total Ano Anterior mesmo período", total_anterior)
 st.metric("Variação (%)", f"{variacao:.2f}%")
 
-st.subheader("Total do Tipo Final do Ano")
+st.subheader("Total de Ocorrências do Ano")
 st.metric("Total 2025", total_2025)
 st.metric("Total 2024", total_2024)
 
