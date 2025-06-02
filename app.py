@@ -51,7 +51,7 @@ filtrado_2025 = 0
 if len(data_range) == 2:
     df_2025 = df[(df['DATA'].dt.year == 2025)]
     total_2025 = df_2025[df_2025['TIPO FINAL'] == tipo_escolhido].shape[0]
-    else
+else:
     filtrado_2025 = df_filtrado.shape[0]
     total_atual = df_filtrado.shape[0]
     total_anterior = df_ano_ant.shape[0]
