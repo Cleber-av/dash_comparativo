@@ -49,12 +49,12 @@ filtro_ano_ant = (
 df_ano_ant = df[filtro_ano_ant]
 
 # Total de ocorrências
-    # df_2025 = df[(df['DATA'].dt.year == 2025)]
-    total_2025 = df_2025[df_2025['TIPO FINAL'] == tipo_escolhido].shape[0]
-    filtrado_2025 = df_filtrado.shape[0]
-    total_atual = df_filtrado.shape[0]
-    total_anterior = df_ano_ant.shape[0]
-    variacao = ((filtrado_2025 - total_anterior) / total_anterior * 100) if total_anterior > 0 else 0
+df_2025 = df[(df['DATA'].dt.year == 2025)]
+total_2025 = df_2025[df_2025['TIPO FINAL'] == tipo_escolhido].shape[0]
+filtrado_2025 = df_filtrado.shape[0]
+total_atual = df_filtrado.shape[0]
+total_anterior = df_ano_ant.shape[0]
+variacao = ((filtrado_2025 - total_anterior) / total_anterior * 100) if total_anterior > 0 else 0
 
 # Total por tipo final apenas para ano 2024
 df_2024 = df[(df['DATA'].dt.year == 2024)]
