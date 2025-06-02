@@ -14,7 +14,7 @@ st.sidebar.title("Filtros")
 
 tipos = df['TIPO FINAL'].unique()
 tipo_escolhido = st.sidebar.selectbox("Selecione o Tipo de Ocorrência", tipos)
-data_range = st.sidebar.date_input("Selecione o Período", df['DATA'].min(['DATA'].dt.year == 2025), df['DATA'].max(['DATA'].dt.year == 2025))
+data_range = st.sidebar.date_input("Selecione o Período", df['DATA'].min(), df['DATA'].max())
 
 
 # Garantir que o período sempre tenha dois valores
