@@ -14,15 +14,14 @@ st.sidebar.title("Filtros")
 
 tipos = df['TIPO FINAL'].unique()
 tipo_escolhido = st.sidebar.selectbox("Selecione o Tipo de Ocorrência", tipos)
-df_2025 = df[(df['DATA'].dt.year == 2025)] 
-data_range = st.sidebar.date_input("Selecione o Período", df_2025)
+data_range = st.sidebar.date_input("Selecione o Período", [df['DATA'].min(df['DATA'].dt.year == 2025), df['DATA'].max(df['DATA'].dt.year == 2025)])
+
 
 # Garantir que o período sempre tenha dois valores
 if len(data_range) != 2:
     st.error("Por favor, selecione um intervalo de datas válido.")
     st.stop()
-    data_range = st.sidebar.date_input("Selecione o Período", [df['DATA'].min(), df['DATA'].max()])
-
+    
 # Filtrar os dados com base nas escolhas
 data_inicio = pd.to_datetime(data_range[0])
 data_fim = pd.to_datetime(data_range[1])
